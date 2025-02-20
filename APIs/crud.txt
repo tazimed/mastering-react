@@ -1,0 +1,9 @@
+crud  = create/ read / update  / delete
+
+put / patch = pdate 
+
+post = insert
+
+get = read 
+
+delete = supprimer

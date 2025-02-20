@@ -1,0 +1,39 @@
+{
+    "products": [
+    {
+        "id": 1,
+        "name": "Wireless Bluetooth Headphones",
+        "description": "High-quality over-ear headphones with noise-canceling technology and 20 hours of battery life.",
+        "brand": "SoundMagic",
+        "price_MAD": 649.99
+    },
+    {
+        "id": 2,
+        "name": "Smart Fitness Watch",
+        "description": "Waterproof fitness tracker with heart rate monitor, GPS, and sleep tracking functionality.",
+        "brand": "FitPulse",
+        "price_MAD": 1399.99
+    },
+    {
+        "id": 3,
+        "name": "Portable Power Bank",
+        "description": "10,000mAh portable charger with dual USB outputs and fast-charging support.",
+        "brand": "PowerBoost",
+        "price_MAD": 249.99
+    },
+    {
+        "id": 4,
+        "name": "Wireless Keyboard and Mouse Combo",
+        "description": "Ergonomic wireless keyboard and mouse set with a long battery life and quiet typing experience.",
+        "brand": "TechWave",
+        "price_MAD": 549.99
+    },
+    {
+        "id": 5,
+        "name": "USB-C Hub Adapter",
+        "description": "6-in-1 USB-C hub with HDMI output, USB 3.0, and SD card reader for laptops and tablets.",
+        "brand": "LinkPro",
+        "price_MAD": 199.99
+    }
+]
+}

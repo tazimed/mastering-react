@@ -1,0 +1,87 @@
+// store/reducers.js
+
+const initialState = {
+  count: 0
+};
+
+const rootReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return {
+        ...state,
+        count: state.count + 1
+      };
+    case 'DECREMENT':
+      return {
+        ...state,
+        count: state.count - 1
+      };
+    default:
+      return state;
+  }
+};
+
+export default rootReducer;
+// store/middleware/logger.js
+
+const logger = store => next => action => {
+  console.log('Dispatching action:', action);
+  const result = next(action);
+  console.log('New state:', store.getState());
+  return result;
+};
+
+export default logger;
+// store/index.js
+
+import { createStore, applyMiddleware } from 'redux';
+import rootReducer from './reducers';
+import logger from './middleware/logger';
+
+const store = createStore(
+  rootReducer,
+  applyMiddleware(logger)
+);
+
+export default store;
+// App.js
+
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+function App() {
+  const count = useSelector(state => state.count);
+  const dispatch = useDispatch();
+
+  const increment = () => {
+    dispatch({ type: 'INCREMENT' });
+  };
+
+  const decrement = () => {
+    dispatch({ type: 'DECREMENT' });
+  };
+
+  return (
+    <div>
+      <h1>Counter: {count}</h1>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+    </div>
+  );
+}
+
+export default App;
+// index.js
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store';
+import App from './App';
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
